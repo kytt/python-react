@@ -1,0 +1,91 @@
+.contactsearch-main {
+    width: 100%;
+    transition: all 500ms linear;
+    background-color: #EFEFEF;
+}
+.contactsearch-main.active {
+    margin-left: 200px;
+    transition: all 500ms linear;
+    width: calc(100% - 200px);
+}
+.burger-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #FFFFFF;
+    margin: 5px 0px;
+}
+.toggle-btn {
+    position: absolute;
+    left: 30px;
+    transition: all 500ms linear;
+}
+.toggle-btn.active {
+    left: 230px;
+    transition: all 500ms linear;
+}
+.contactsearch-title-bg {
+    top: 0%;
+    width: 100%;
+}
+.contactsearch-title-text {
+    position: absolute;
+    left: 50%; 
+    color: white;
+    transform: translate(-50%, 0%);
+    transition: all 500ms linear;
+}
+.contactsearch-title-text.active {
+    margin-left: 200px;
+    transform: translate(-80%, 0%);
+    transition: all 500ms linear;
+}
+.contactsearch-gray-bg {
+    background-color: gray;
+}
+.contactsearch-head-text {
+    margin-left: 100px;
+    margin-top: 50px;
+    font-size: 30px;
+    color: black;
+}
+.contactsearch-search-box {
+    width: 400px;
+    margin-top: 60px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+.contactsearch-search-icon {
+    position: absolute;
+    margin-left: 470px;
+    margin-top: -85px;
+}
+
+@media screen and (min-width: 601px) {
+    .contactsearch-title-bg {
+        height: 100px;
+    }
+    .contactsearch-title-text {
+        font-size: 40px;
+        top: 20px;
+    }
+    .toggle-btn {
+        top: 20px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .contactsearch-title-bg {
+      height: 50px;
+    }
+    .contactsearch-title-text {
+        font-size: 20px;
+        top: 15px;
+    }
+    .toggle-btn {
+        top: 10px;
+    }
+}
+
+
+
+

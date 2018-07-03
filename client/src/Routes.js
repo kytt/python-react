@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {BrowserRouter,  Route, Redirect, Switch} from 'react-router-dom';
-import Login from '././components/Login/Login';
-import Home from '././components/Home/Home';
-import ContactSearch from '././components/ContactSearch/ContactSearch';
-import AuditLog from '././components/AuditLog/AuditLog';
-import Test from '././components/Test/Test';
+import Login from '././components/Pages/Login/Login';
+import Home from '././components/Pages/Home/Home';
+import ContactSearch from '././components/Pages/ContactSearch/ContactSearch';
+import AuditLog from '././components/Pages/AuditLog/AuditLog';
+import Test from '././components/Pages/Test/Test';
 
 const Routes = () => (
     <BrowserRouter >

@@ -1,10 +1,9 @@
 {
-  "name": "client",
+  "name": "delcontact",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
-    "create-react-app": "^1.5.2",
     "create-react-class": "^15.6.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -28,16 +27,10 @@
     "react-table": "^6.8.6",
     "reactstrap": "^6.1.0"
   },
-  "devDependencies": {
-    "prettier": "1.9.2",
-    "react-scripts": "1.0.10"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "prettier": "./node_modules/.bin/prettier --print-width 120 --single-quote --no-semi --write \"src/**/*.js\""
-  },
-  "proxy": "http://localhost:5000"
+    "eject": "react-scripts eject"
+  }
 }

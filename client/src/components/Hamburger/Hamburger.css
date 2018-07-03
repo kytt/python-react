@@ -1,0 +1,87 @@
+.hamburger-sidebar {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background: #FFFFFF;
+    left: -200px;
+    transition: all 500ms linear;
+}
+.hamburger-sidebar.active {
+    left: 0px;
+}
+.hamburger-nav {
+    margin: 0px;
+    padding: 0px;
+}
+.hamburger-nav-text {
+    list-style: none;
+    padding: 30px 55px;
+    font-size: 12px;
+}
+.hamburger-no-hyperlink {
+    text-decoration: none;
+    color: black;
+}
+.hamburger-profile-bg {
+    width: 200px;
+}
+.hamburger-profile-pic {
+    position: absolute;
+    left: -200px;
+    top: 30px;
+    transition: all 500ms linear;
+}
+.hamburger-profile-pic.active {
+    left: 10px;
+    transition: all 500ms linear;
+}
+.hamburger-home-icon {
+    position: absolute;
+    left: -200px;
+    top: 226px;
+    transition: all 500ms linear;
+}
+.hamburger-home-icon.active {
+    left: 20px;
+    transition: all 500ms linear;
+}
+.hamburger-profile-icon {
+    position: absolute;
+    left: -200px;
+    top: 300px;
+    transition: all 500ms linear;
+}
+.hamburger-profile-icon.active {
+    left: 20px;
+    transition: all 500ms linear;
+}
+.hamburger-search-icon {
+    position: absolute;
+    left: -200px;
+    top: 374px;
+    transition: all 500ms linear;
+}
+.hamburger-search-icon.active {
+    left: 20px;
+    transition: all 500ms linear;
+}
+.hamburger-log-icon {
+    position: absolute;
+    left: -200px;
+    top: 448px;
+    transition: all 500ms linear;
+}
+.hamburger-log-icon.active {
+    left: 20px;
+    transition: all 500ms linear;
+}
+.hamburger-out-icon {
+    position: absolute;
+    left: -200px;
+    top: 522px;
+    transition: all 500ms linear;
+}
+.hamburger-out-icon.active {
+    left: 20px;
+    transition: all 500ms linear;
+}
