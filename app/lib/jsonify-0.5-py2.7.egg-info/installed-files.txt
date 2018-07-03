@@ -1,0 +1,8 @@
+..\jsonify\__init__.py
+..\jsonify\__init__.pyc
+..\jsonify\convert.py
+..\jsonify\convert.pyc
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+top_level.txt

@@ -1,0 +1,5 @@
+Client ID	
+665957642249-qfmv28lunsn34m7oeu0op631l5goq5q5.apps.googleusercontent.com
+
+Client secret	
+cm-h_9NKBQM2KLbZMBsBsVdl 

@@ -1,0 +1,33 @@
+.login-bg {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;   
+}
+.login-title {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.login-gbutton {
+    position: absolute;
+    left: 50%;
+    top: 65%;  
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 601px) {
+    .login-title {
+      font-size: 100px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .login-title {
+        font-size: 50px;
+    }
+} 
+
+
