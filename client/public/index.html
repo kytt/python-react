@@ -19,13 +19,127 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>DelContact</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
-    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
+    <title>Tangerine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
+    <!-- googleLoginButton -->
+    <!--<meta name="google-signin-client_id" content="665957642249-20clvptq5svpv41uk3a2vjs9vfltjv2l.apps.googleusercontent.com">-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script>
+      var googleUser = {};
+      var startApp = function() {
+        gapi.load('auth2', function(){
+          // Retrieve the singleton for the GoogleAuth library and set up the client.
+          auth2 = gapi.auth2.init({
+            client_id: '665957642249-20clvptq5svpv41uk3a2vjs9vfltjv2l.apps.googleusercontent.com',
+            cookiepolicy: 'single_host_origin',
+            // Request scopes in addition to 'profile' and 'email'
+            scope: 'profile'
+          });
+          attachSignin(document.getElementById('customBtn'));
+        });
+      };
+
+      function attachSignin(element) {
+        console.log(element.id);
+        auth2.attachClickHandler(element, {},
+            function(googleUser) {
+              var id_token = googleUser.getAuthResponse().id_token;
+              var xhr = new XMLHttpRequest();
+              xhr.open('POST', 'http://demodelcontact.appspot.com/postidtoken');
+              xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+              xhr.onload = function() {
+                  console.log('Verification: ' + xhr.responseText);
+                  var profile = googleUser.getBasicProfile();
+                  console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                  console.log('Image URL: ' + profile.getImageUrl());
+                  if(xhr.responseText === 'Valid')
+                    window.location = "/home";
+                  else {
+                    alert(xhr.responseText);
+                    gapi.load('auth2', function() {
+                        var auth2 = gapi.auth2.getAuthInstance();
+                        auth2.signOut();
+                        console.log('Logged out.');
+                    });
+                  }
+              };
+              xhr.send('idtoken=' + id_token);
+
+            }, function(error) {
+              alert(JSON.stringify(error, undefined, 2));
+            });
+      }
+      </script>
+      <style type="text/css">
+        #customBtn {
+          display: inline-block;
+          background: white;
+          color: #444;
+          width: 190px;
+          border-radius: 5px;
+          border: thin solid #888;
+          box-shadow: 1px 1px 1px grey;
+          white-space: nowrap;
+        }
+        #customBtn:hover {
+          cursor: pointer;
+        }
+        span.label {
+          font-family: serif;
+          font-weight: normal;
+        }
+        span.icon {
+          background: url('https://developers.google.com/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+          display: inline-block;
+          vertical-align: middle;
+          width: 42px;
+          height: 42px;
+        }
+        span.buttonText {
+          display: inline-block;
+          vertical-align: middle;
+          padding-left: 8px;
+          padding-right: 42px;
+          font-size: 14px;
+          font-weight: Bold;
+          /* Use the Roboto font that is loaded in the <head> */
+          font-family: 'Roboto', sans-serif;
+        }
+      </style>
   </head>
   <body>
+    <!-- In the callback, you would hide the gSignInWrapper element on a
+    successful sign in -->
+    <style>
+      div.gsignin {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      }
+    </style>
+    <style>
+      div.gsignout {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      }
+    </style>
     <div id="root"></div>
+    <div id="gSignInWrapper" class="gsignin">
+      <div id="customBtn" class="customGPlusSignIn">
+        <span class="icon"></span>
+        <span class="buttonText">Sign in with Google</span>
+      </div>
+    </div>
+    <div id="name"></div>
+    <script>startApp();</script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -36,5 +150,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
   </body>
+  <!-- scripts -->
 </html>

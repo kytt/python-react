@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
@@ -8,9 +9,10 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 
 app = Flask(__name__)
+CORS(app)
 
 # global
-CLIENT_ID = '665957642249-o8qjrvp9b8pef7mlne64t3ip57f0vc4l.apps.googleusercontent.com'
+CLIENT_ID = '665957642249-20clvptq5svpv41uk3a2vjs9vfltjv2l.apps.googleusercontent.com'
 GSUITE_DOMAIN_NAME_DEV = 'dev.tangerine.co.th'
 GSUITE_DOMAIN_NAME = 'tangerine.co.th'
 
