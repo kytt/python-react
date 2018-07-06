@@ -10,7 +10,12 @@ import chat from "./chat.png"
 
 import Hamburger from "../../Hamburger/Hamburger"
 
+import {Link} from 'react-router-dom'
+
 class Home extends Component {
+    componentDidMount() {
+        document.getElementById("customBtn").style.visibility = "hidden";
+    }
     handleClick() {
         document.getElementById("slidebar").classList.toggle("active");
         document.getElementById("toggle-btn").classList.toggle("active");
@@ -37,7 +42,9 @@ class Home extends Component {
                     <h1 id="title" className="home-title-text">tangerine</h1>
                     <h2 className="home-head-text">Service</h2>
                     <img src={log} className="home-icons"/>
+                    <Link to ="/test">
                     <img src={del} className="home-icons"/>
+                    </Link>
                     <img src={mail} className="home-icons"/>
                     <img src={chat} className="home-icons"/>
                 </div>
